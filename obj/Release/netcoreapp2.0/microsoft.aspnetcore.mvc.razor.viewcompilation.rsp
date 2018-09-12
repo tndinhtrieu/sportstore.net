@@ -1,0 +1,24 @@
+C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=SportsStore
+--content-root=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Admin\Edit.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Admin\Index.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Cart\Index.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Home\About.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Home\Contact.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Home\Index.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Order\Checkout.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Order\Completed.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Order\List.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Product\List.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\Banner.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\Components\CartSummary\Default.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\Components\NavigationMenu\Default.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\Error.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\ProductSummary.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\_AdminLayout.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\_Layout.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\_ViewImports.cshtml
+--file=C:\Users\NGUYEN DINH TRIEU\Desktop\DinhTRieu\visual studio project\webnet.core\ProductStore\Product.Core\SportsStore\Views\_ViewStart.cshtml
