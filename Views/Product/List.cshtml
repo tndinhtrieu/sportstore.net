@@ -32,7 +32,7 @@
     function LoadData(id) {
         alert(id);
         $.ajax({
-            url: "https://localhost:446/Product/GetPstring/" + id,
+            url: "/Product/GetPstring/" + id,
             type: "GET",
             dataType: "json",
             success: function (data) {
