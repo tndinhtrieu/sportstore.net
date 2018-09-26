@@ -39,7 +39,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"89dc3f471c9127f5d9fe9db3323d33a6ea2a1087", @"/Views/Admin/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a0c31740f30db66bba8e6c161fb074ef96fd8b0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3725683859dad2328104b2fd717e8f889fc4a589", @"/Views/_ViewImports.cshtml")]
     public class Views_Admin_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -122,12 +122,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</td>\r\n                <td class=\"text-center\">\r\n                    ");
             EndContext();
             BeginContext(640, 516, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0c5d9af08a34e78aed6ce02edd7b7d4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd434a245a146d694921a873794faba", async() => {
                 BeginContext(680, 26, true);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(706, 182, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fc74ef324124a8b9c2266a308bc6553", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6961d8813c84ddaa7af62fabad24a34", async() => {
                     BeginContext(824, 60, true);
                     WriteLiteral("\r\n                            Edit\r\n                        ");
                     EndContext();
@@ -202,7 +202,7 @@ WriteAttributeValue("", 959, item.ProductID, 959, 15, false);
             WriteLiteral("</table>\r\n<div class=\"text-center\">\r\n    ");
             EndContext();
             BeginContext(1252, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb016ed0be774c2098de0dd8724b86a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "977e8f8e5db545c3af2c0ec47e95506e", async() => {
                 BeginContext(1299, 11, true);
                 WriteLiteral("Add Product");
                 EndContext();

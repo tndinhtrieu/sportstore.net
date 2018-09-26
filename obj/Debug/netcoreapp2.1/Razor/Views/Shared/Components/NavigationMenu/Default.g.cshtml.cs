@@ -73,7 +73,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("<br/>\r\n");
             EndContext();
             BeginContext(35, 132, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5e62f1832fac46caa3932dd6a306846a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f01080947f54254a164f8c3279943f8", async() => {
                 BeginContext(151, 12, true);
                 WriteLiteral("\r\n    Home\r\n");
                 EndContext();
@@ -110,7 +110,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
             BeginContext(209, 235, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f8fb5365a314822a7dfef97007a2ec1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6eacf054e97243e2a557941d3f3286c1", async() => {
                 BeginContext(423, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();

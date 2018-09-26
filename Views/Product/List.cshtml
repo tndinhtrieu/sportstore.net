@@ -1,9 +1,14 @@
 ﻿@model ProductsListViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <div class="row">
-    <div id="categories" class="col-md-3">
+    <div id="categories" class="col col-md-3">
         @await Component.InvokeAsync("NavigationMenu")
     </div>
     <div id="body" class="col-md-9">
+        <div id="Detail" class="card-body">
+        </div>
         @foreach (var p in Model.Products)
         {
             await Html.RenderPartialAsync("ProductSummary", p);
@@ -15,3 +20,29 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function someFunction(id) {
+        var url = "/Product/GetPstring/" + id;
+        $.get(url, null, function (data) {
+            $("#Detail").html(data.description);
+        });
+        LoadData(id);
+    }
+
+    function LoadData(id) {
+        alert(id);
+        $.ajax({
+            url: "https://localhost:446/Product/GetPstring/" + id,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                alert(data.description);
+            },
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+                alert(status);
+                alert(error);
+            }
+        });
+    }
+</script>

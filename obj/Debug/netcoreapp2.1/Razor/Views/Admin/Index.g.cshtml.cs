@@ -122,12 +122,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</td>\r\n                <td class=\"text-center\">\r\n                    ");
             EndContext();
             BeginContext(640, 516, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6657a200301f40588940d0015dc5c35b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d20382eaf2c54e83a7a02528213800d7", async() => {
                 BeginContext(680, 26, true);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(706, 182, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25e3c55d8211422b8583f0e7cabf99cb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c97b11b7d7ba49efb55f21023a7ff170", async() => {
                     BeginContext(824, 60, true);
                     WriteLiteral("\r\n                            Edit\r\n                        ");
                     EndContext();
@@ -202,7 +202,7 @@ WriteAttributeValue("", 959, item.ProductID, 959, 15, false);
             WriteLiteral("</table>\r\n<div class=\"text-center\">\r\n    ");
             EndContext();
             BeginContext(1252, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d04f668f45f040598f236e31f2b9af08", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c77b0881359749e5ae6b5d1931c2e980", async() => {
                 BeginContext(1299, 11, true);
                 WriteLiteral("Add Product");
                 EndContext();

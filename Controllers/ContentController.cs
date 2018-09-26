@@ -19,7 +19,6 @@ namespace SportsStore.Controllers
         }
         [HttpGet("string")]
         public string GetString()=> "This is a string response";
-
         [HttpGet("object")]
         public Models.Product GetObject() => repository.Products.FirstOrDefault();
 

@@ -7,7 +7,7 @@ using SportsStore.Models.ViewModels;
 
 namespace SportsStore.Controllers
 {
-    
+
     public class ProductController : Controller
     {
         public Models.IProductRepository productRepository;
@@ -35,6 +35,7 @@ namespace SportsStore.Controllers
         }
 
 
+
         [HttpGet]
         public ProductsListViewModel ProductList(string category, int productPage = 1)
         {
@@ -52,5 +53,12 @@ namespace SportsStore.Controllers
             productsListViewModel.CurrentCategory = category;
             return productsListViewModel;
         }
+        //[Route("/Product/GetPstring/{id}")]
+        [HttpGet("[controller]/[action]/{id}")]
+        public Models.Product GetPstring(int id)
+        {
+            return productRepository.Products.FirstOrDefault(c => c.ProductID == id);
+        }
+
     }
 }
