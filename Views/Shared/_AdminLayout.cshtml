@@ -7,17 +7,14 @@
     <title>@ViewData["Title"] - SportsStore</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
         <link href="~/lib/fontawesome/advanced-options/use-with-node-js/fontawesome-free/css/all.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-
-        <link href="~/lib/fontawesome/advanced-options/use-with-node-js/fontawesome-free/css/all.min.css" rel="stylesheet" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.min.css" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/fontawesome/advanced-options/use-with-node-js/fontawesome-free/css/all.css" rel="stylesheet" />
     </environment>
 </head>
 <body>
@@ -39,42 +36,41 @@
         <div class="row">
             <div class="col-md-3">
                 <div>
-                    <a class="btn btn-block btn-secondary" asp-action="ListUsers" asp-controller="Admin">List Users</a>
+                    @*<a class="btn-primary" asp-action="ListUsers" asp-controller="Admin">List Users</a>*@
+                    <a class="btn-primary" href="javascript:GetAction('Admin','ListUsers','#BodyContent')">List Users</a>
                 </div>
                 <div>
-                    <a class="btn btn-block btn-secondary" asp-action="Index" asp-controller="RoleAdmin">Roles</a>
+                    @*<a class="btn-primary" asp-action="Index" asp-controller="RoleAdmin">Roles</a>*@
+                    <a class="btn-primary" href="javascript:GetAction('RoleAdmin','Index','#BodyContent')">Roles</a>
                 </div>
                 <div>
-                    <a  class="btn btn-block btn-secondary" asp-action="Index" asp-controller="Admin">Products</a>
+                    @*<a class="btn-primary" asp-action="Index" asp-controller="Admin">Products</a>*@
+                    <a class="btn-primary" href="javascript:GetAction('Admin','Index','#BodyContent')">Products</a>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div id="BodyContent" class="col-md-9">
                 @RenderBody()
             </div>
         </div>
     </div>
-
+    @* href="javascript:someFunction(@Model.ProductID) *@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/ajax/dist/ajax.min.js"></script>
+        <script src="~/js/Admin.js"></script>
     </environment>
     <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/ajax/dist/ajax.min.js"></script>
+        <script src="~/js/Admin.js"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)
+
 </body>
+<
+
 </html>
+

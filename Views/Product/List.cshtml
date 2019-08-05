@@ -15,7 +15,7 @@
         }
         <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
              page-class="btn" page-class-normal="btn-secondary"
-             page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+             page-class-selected="btn-primary" page-url-categoryID="@Model.CurrentCategoryID"
              class="btn-group pull-right m-1">
         </div>
     </div>
@@ -26,7 +26,7 @@
         $.get(url, null, function (data) {
             $("#Detail").html(data.description);
         });
-        LoadData(id);
+        //LoadData(id);
     }
 
     function LoadData(id) {

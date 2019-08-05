@@ -11,7 +11,7 @@ using SportsStore.Models;
 namespace SportsStore.Controllers
 {
 
-    [Authorize(Roles ="Admins")]
+    [Authorize(Roles = "Admins")]
     public class AdminController : Controller
     {
         private IProductRepository repository;
@@ -23,8 +23,11 @@ namespace SportsStore.Controllers
         }
         public ViewResult Index() => View(repository.Products);
 
-        public ViewResult ListUsers() => View(userManager.Users);
-
+        public ViewResult ListUsers()
+        {
+            var users = userManager.Users.ToList();
+            return View(users);
+        }
         public ViewResult CreateUser() => View("CreateUser", new Models.CreateModel());
 
         public async Task<IActionResult> EditUser(string id)
@@ -41,7 +44,7 @@ namespace SportsStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser(string id, string email,string password)
+        public async Task<IActionResult> EditUser(string id, string email, string password)
         {
             ApplicationUser user = await userManager.FindByIdAsync(id);
             if (user != null)
@@ -135,7 +138,7 @@ namespace SportsStore.Controllers
         public ViewResult Edit(int productID) =>
             View(repository.Products.SingleOrDefault(x => x.ProductID == productID));
         public ViewResult Create(int productID) =>
-           View("Edit",new Product());
+           View("Edit", new Product());
         [HttpPost]
         public IActionResult Edit(Product product)
         {

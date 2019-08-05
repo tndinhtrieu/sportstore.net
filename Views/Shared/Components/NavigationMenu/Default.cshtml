@@ -1,18 +1,32 @@
-﻿@model IEnumerable<string>
-<br/>
-<a class="btn btn-block btn-secondary"
+﻿@model IEnumerable<Category>
+<br />
+@{
+    int CategoryID = 0;
+    if (ViewBag.SelectedCategoryID != null)
+    {
+        CategoryID = int.Parse(ViewBag.SelectedCategoryID.ToString());
+    }
+
+    Func<int, string> GetStyle = (_CategoryID) =>
+    {
+        return _CategoryID == CategoryID ? "btn-primary" : "btn-secondary";
+    };
+}
+<a class="btn btn-block @(GetStyle(0))"
    asp-action="List"
    asp-controller="Product"
-   asp-route-category="">
-    Home
-</a>
-@foreach (string category in Model)
-{
-<a class="btn btn-block @(category == ViewBag.SelectedCategory ? "btn-primary": "btn-secondary")"
-   asp-action="List"
-   asp-controller="Product"
-   asp-route-category="@category"
+   asp-route-categoryID=0
    asp-route-productPage="1">
-    @category
+    All product
 </a>
+@foreach (var category in Model)
+{
+
+    <a class="btn btn-block @(GetStyle(category.CatetoryID))"
+       asp-action="List"
+       asp-controller="Product"
+       asp-route-categoryID="@category.CatetoryID"
+       asp-route-productPage="1">
+        @category.Name
+    </a>
 }

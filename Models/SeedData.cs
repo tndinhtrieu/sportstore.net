@@ -31,63 +31,63 @@ namespace SportsStore.Models
                     {
                         Name = "Kayak",
                         Description = "A boat for one person",
-                        Category = "Watersports",
+                        CategoryID = 1,
                         Price = 275
                     },
                     new Product
                     {
                         Name = "Lifejacket",
                         Description = "Protective and fashionable",
-                        Category = "Watersports",
+                        CategoryID = 2,
                         Price = 48.95m
                     },
                     new Product
                     {
                         Name = "Soccer Ball",
                         Description = "FIFA-approved size and weight",
-                        Category = "Soccer",
+                        CategoryID = 3,
                         Price = 19.50m
                     },
                     new Product
                     {
                         Name = "Corner Flags",
                         Description = "Give your playing field a professional touch",
-                        Category = "Soccer",
+                        CategoryID = 4,
                         Price = 34.95m
                     },
                     new Product
                     {
                         Name = "Stadium",
                         Description = "Flat-packed 35,000-seat stadium",
-                        Category = "Soccer",
+                        CategoryID = 5,
                         Price = 79500
                     },
                     new Product
                     {
                         Name = "Thinking Cap",
                         Description = "Improve brain efficiency by 75%",
-                        Category = "Chess",
+                        CategoryID = 6,
                         Price = 16
                     },
                     new Product
                     {
                         Name = "Unsteady Chair",
                         Description = "Secretly give your opponent a disadvantage",
-                        Category = "Chess",
+                        CategoryID = 7,
                         Price = 29.95m
                     },
                     new Product
                     {
                         Name = "Human Chess Board",
                         Description = "A fun game for the family",
-                        Category = "Chess",
+                        CategoryID = 8,
                         Price = 75
                     },
                     new Product
                     {
                         Name = "Bling-Bling King",
                         Description = "Gold-plated, diamond-studded King",
-                        Category = "Chess",
+                        CategoryID = 9,
                         Price = 1200
                     }
                     );

@@ -19,11 +19,14 @@ namespace SportsStore
         }
 
         //public static IWebHost BuildWebHost(string[] args) =>
-            //WebHost.CreateDefaultBuilder(args)
-            //    .UseStartup<Startup>()
-            //    .Build();
+        //WebHost.CreateDefaultBuilder(args)
+        //    .UseStartup<Startup>()
+        //    .Build();
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().UseDefaultServiceProvider(option=>option.ValidateScopes=false);
+        //Trieu 2018.10.06
+        WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>().UseDefaultServiceProvider(option => option.ValidateScopes = false);
+        //WebHost.CreateDefaultBuilder(args)
+        //    .UseStartup<Startup>();
     }
 }

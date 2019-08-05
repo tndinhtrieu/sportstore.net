@@ -2,12 +2,12 @@
 
 @{
     ViewData["Title"] = "CreateUser";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = null;//"~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="bg-primary m-1 p-1 text-white"><h4>Create User</h4></div>
 <div asp-validation-summary=" All" class="text-danger"></div>
-<form asp-action="CreateUser" method="post">
+<form id="CreateUser" asp-action="CreateUser" method="post">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
@@ -20,8 +20,19 @@
         <label asp-for="Password"></label>
         <input asp-for="Password" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="button" id="btnsave" class="btn btn-primary">Create</button>
     <a asp-action="ListUsers" class="btn btn-secondary">Cancel</a>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnsave").click(function (e) {
+            var form = $("#CreateUser");
+            var formData = form.serialize();
+            $('#modalbody').modal('hide')
+            CreateUser("Admin", "CreateUser", "#BodyContent", formData);
+           
+        });
+    });
+</script>
 
 

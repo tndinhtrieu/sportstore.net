@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SportsStore.Infrastructure;
 
 namespace SportsStore.Models
@@ -12,8 +13,9 @@ namespace SportsStore.Models
         public EFProductRepository(ApplicationDbContext ctx)
         {
             context = ctx;
+            Products = context.Products.Include(c => c.Category);
         }
-        public IQueryable<Product> Products => context.Products;
+        public IQueryable<Product> Products { get; set; }
 
         public Product DeleteProduct(int productID)
         {
@@ -42,6 +44,6 @@ namespace SportsStore.Models
             context.SaveChanges();
         }
 
-       
+
     }
 }

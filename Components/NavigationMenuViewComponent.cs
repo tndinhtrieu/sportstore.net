@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace SportsStore.Components
 {
-    public class NavigationMenuViewComponent: ViewComponent
+    public class NavigationMenuViewComponent : ViewComponent
     {
-        private Models.IProductRepository repository;
-        public NavigationMenuViewComponent(Models.IProductRepository prod)
+        private Models.ICategoryRepository repository;
+        public NavigationMenuViewComponent(Models.ICategoryRepository prod)
         {
             this.repository = prod;
         }
+
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedCategory = RouteData?.Values["category"];
-            return View(repository.Products.Select(c => c.Category).Distinct().OrderBy(x => x));
+            ViewBag.SelectedCategoryID = RouteData?.Values["categoryID"];
+            return View(repository.Categories.Where(c => c.IsDelete == false));
         }
     }
 }

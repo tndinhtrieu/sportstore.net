@@ -12,6 +12,8 @@ using SportsStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
 
 namespace SportsStore
 {
@@ -28,31 +30,37 @@ namespace SportsStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Models.ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:SportStoreProducts:ConnectionString"]));
-            services.AddIdentity<ApplicationUser, IdentityRole>(opts => {
-                opts .User.RequireUniqueEmail = true;
-                opts .Password.RequiredLength = 6;
+            services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                opts.Password.RequiredLength = 6;
                 opts.Password.RequireNonAlphanumeric = false;
                 opts.Password.RequireLowercase = false;
                 opts.Password.RequireUppercase = false;
                 opts.Password.RequireDigit = false;
-            }).AddEntityFrameworkStores<ApplicationDbContext>() .AddDefaultTokenProviders();
-            services.AddTransient<Models.IProductRepository, EFProductRepository>();
-            services.AddScoped<Models.Cart>(sp => SessionCart.GetCart(sp));
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddTransient<ICategoryRepository, EFCategoryRepository>();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IOrderRepository, EFOrderRepository>();
             services.AddMemoryCache();
             services.AddSession();
-            services.AddMvc(option=>
+            services.Configure<ForwardedHeadersOptions>(option =>
             {
-                option.FormatterMappings.SetMediaTypeMappingForFormat("xml",new MediaTypeHeaderValue("application/xml"));
+                option.KnownProxies.Add(IPAddress.Parse("0.0.0.0"));
+            });
+            services.AddMvc(option =>
+            {
+                option.FormatterMappings.SetMediaTypeMappingForFormat("xml", new MediaTypeHeaderValue("application/xml"));
                 option.RespectBrowserAcceptHeader = true;
                 option.ReturnHttpNotAcceptable = true;
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddXmlDataContractSerializerFormatters();
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public  void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -65,6 +73,10 @@ namespace SportsStore
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -74,7 +86,7 @@ namespace SportsStore
             {
                 routes.MapRoute(
                     name: null,
-                    template: "{category}/Page{productPage:int}",
+                    template: "{categoryID}/Page{productPage:int}",
                     defaults: new { controller = "Product", action = "List" });
                 routes.MapRoute(
                     name: null,
@@ -87,13 +99,13 @@ namespace SportsStore
                     });
                 routes.MapRoute(
                     name: null,
-                    template: "{category}",
+                    template: "{categoryID}",
                     defaults: new
                     {
                         controller = "Product",
                         action = "List",
                         productPage = 1
-                    } );
+                    });
                 routes.MapRoute(
                     name: null,
                     template: "",
@@ -101,10 +113,11 @@ namespace SportsStore
                     {
                         controller = "Product",
                         action = "List",
-                        productPage = 1 });
+                        productPage = 1
+                    });
                 routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
             });
-            ApplicationDbContext.CreateAdminAccount(app.ApplicationServices,Configuration).Wait();
+            ApplicationDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
             //SeedData.EnsurePopulated(app);
             //IdentitySeedData.EnsurePopulated(app);
         }

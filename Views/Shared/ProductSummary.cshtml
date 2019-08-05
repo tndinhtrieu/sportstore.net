@@ -12,11 +12,15 @@
                    value="@ViewContext.HttpContext.Request.PathAndQuery()" />
             <span class="card-text">
                 @Model.Description
+
+            </span>
+            <div class="fa-pull-right">
+                <p class="text-right"><span class="badge badge-primary">@Model.Price</span></p>
                 <button type="submit"
-                        class="btn btn-success btn-sm pull-right" style="float:right">
+                        class="btn btn-success btn-sm">
                     Add To Cart
                 </button>
-            </span>
+            </div>
         </form>
     </div>
 </div>

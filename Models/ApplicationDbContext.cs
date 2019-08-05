@@ -14,6 +14,7 @@ namespace SportsStore.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public static async Task CreateAdminAccount(IServiceProvider serviceProvider,IConfiguration configuration)
         {
+            
             UserManager<ApplicationUser> userManager =
             serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             RoleManager<IdentityRole> roleManager =
@@ -43,6 +44,7 @@ namespace SportsStore.Models
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
-        
+
+        public DbSet<Category> Categories { get; set; }
     }
 }

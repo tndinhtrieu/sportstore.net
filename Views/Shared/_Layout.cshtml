@@ -75,11 +75,14 @@
     </header>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - SportsStore</p>
-        </footer>
+
     </div>
+    <footer class="footer alert-info" >
+        <div class="container body-content">
+            @await Component.InvokeAsync("FooterDynamic")
+            
+        </div>
+    </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -91,7 +94,6 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/lib/ajax/dist/ajax.min.js"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>
